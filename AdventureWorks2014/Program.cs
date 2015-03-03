@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Data.Entity;
 using System.Linq;
-using AdventureWorks2014.Core.Entities;
+using AdventureWorks2014.Core.Entities.HumanResources;
 using AdventureWorks2014.Core.Infrastructure.DataAccess;
 
 namespace AdventureWorks2014
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             using (var context = new DataContext())
             {
@@ -26,8 +26,8 @@ namespace AdventureWorks2014
 
                 //Paginado
                 var departments = context.Departments.OrderBy(d => d.Name)
-                                                     .Skip(0) //Registro que será iniciado 
-                                                     .Take(5); //Quantidade de registros retornados
+                    .Skip(0) //Registro que será iniciado
+                    .Take(5); //Quantidade de registros retornados
 
                 foreach (var department in departments)
                 {
@@ -36,7 +36,7 @@ namespace AdventureWorks2014
 
                 //Atualizando apenas uma propriedade apenas
                 context.Configuration.ValidateOnSaveEnabled = false;
-                var depart = new Department { Id = 1 };
+                var depart = new Department {Id = 1};
                 context.Departments.Attach(depart);
                 context.Entry(depart).State = EntityState.Unchanged;
 

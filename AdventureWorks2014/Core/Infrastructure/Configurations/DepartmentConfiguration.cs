@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration;
-using AdventureWorks2014.Core.Entities;
+using AdventureWorks2014.Core.Entities.HumanResources;
 
 namespace AdventureWorks2014.Core.Infrastructure.Configurations
 {
@@ -11,14 +11,14 @@ namespace AdventureWorks2014.Core.Infrastructure.Configurations
         {
             ToTable("Department", "HumanResources");
             Property(d => d.Id).HasColumnName("DepartmentID")
-                               .HasDatabaseGeneratedOption(databaseGeneratedOption: DatabaseGeneratedOption.Identity);
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             Property(d => d.Name).HasColumnName("Name")
-                                 .HasMaxLength(50)
-                                 .IsUnicode(false);
+                .HasMaxLength(50)
+                .IsUnicode(false);
             Property(d => d.GroupName).IsUnicode(false)
-                                     .HasMaxLength(50);
+                .HasMaxLength(50);
             Property(d => d.ModifiedDate).HasColumnName("ModifiedDate")
-                                         .HasColumnType("datetime");
+                .HasColumnType("datetime");
         }
     }
 }

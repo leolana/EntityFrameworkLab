@@ -6,7 +6,6 @@ namespace AdventureWorks2014.Core.Entities
         where T : struct
     {
         public T Id { get; set; }
-
         public DateTime ModifiedDate { get; set; }
     }
 }

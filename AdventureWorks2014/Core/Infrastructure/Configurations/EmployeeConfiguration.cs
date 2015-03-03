@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using AdventureWorks2014.Core.Entities;
+using AdventureWorks2014.Core.Entities.HumanResources;
 
 namespace AdventureWorks2014.Core.Infrastructure.Configurations
 {

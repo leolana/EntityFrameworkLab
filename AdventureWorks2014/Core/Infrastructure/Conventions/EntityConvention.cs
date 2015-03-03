@@ -7,7 +7,7 @@ namespace AdventureWorks2014.Core.Infrastructure.Conventions
     {
         public EntityConvention()
         {
-            Types().Where(t => t.BaseType.GetGenericTypeDefinition() == typeof(Entity<>))
+            Types().Where(t => t.BaseType.GetGenericTypeDefinition() == typeof (Entity<>))
                 .Configure(t =>
                 {
                     t.Property("Id").HasColumnName(t.ClrType.Name + "ID");
